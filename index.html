@@ -7,11 +7,18 @@
 	<meta name="keywords" content="minecraft, anarchy, 2b2t, 10b10t, chaos, survival, bounties" />
 	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 	<link href="style/style.css" rel="stylesheet" type="text/css" />
+	<style type="text/css">
+		.gallery-img { width: 220px; height: 130px; margin: 5px; border: 2px solid #444; cursor: pointer; transition: transform 0.2s; }
+		.gallery-img:hover { transform: scale(1.1); border-color: #888; }
+		#status-box { padding: 10px; background: rgba(0,0,0,0.5); border: 1px solid #444; color: #fff; font-family: monospace; }
+		.online { color: #00ff00; }
+		.offline { color: #ff0000; }
+	</style>
 	<script src="script/jQuery_v1_4_2.js" type="text/javascript" charset="utf-8"></script>
 	<script src="script/jquery.scrollTo.js" type="text/javascript" charset="utf-8"></script>
 	<script src="script/slide.js" type="text/javascript" charset="utf-8"></script>
 </head>
-<body onload="javascript:recp();recp2()">
+<body onload="javascript:recp(); updateStatus();">
 	<div class="holder">
 		<div class="header">
 			<div class="logo">
@@ -22,19 +29,18 @@
 		<div class="navigation">
 			<a href="#main" class="panel selected">MAIN</a> <span class="raquo">&raquo;</span> 
 			<a href="#area2" class="panel">INFO</a> <span class="raquo">&raquo;</span> 
-			<a href="#area3" class="panel">CONTACT & MISC</a> <span class="raquo">&raquo;</span>
+			<a href="#area3" class="panel">CONTACT</a> <span class="raquo">&raquo;</span>
+			<a href="#area5" class="panel">GALLERY</a> <span class="raquo">&raquo;</span>
 			<a href="#area4" class="panel">TERMS</a>
 		</div>
 
 		<div class="container con1">
-			10b10t runs on monthly donations. The server needs $91 per month to operate. If unpaid for a week after a due date, it will shut down.
-			<p>If the server ever ends, the world will be released as a torrent.</p>
-			Donations are transparent. No one profits from them.<br />
+			10b10t runs on monthly donations. The server needs $91 per month to operate.<br />
 			<br />
 			December Goal: $0 out of $91<br />
 			<form action="https://10b10t.tebex.io/" method="post">
 				<input type="hidden" name="cmd" value="_s-xclick" />
-				<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/x-click-but11.gif" name="submit" alt="PayPal - The safer, easier way to pay online!" />
+				<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/x-click-but11.gif" name="submit" alt="PayPal" />
 			</form>
 		</div>
 
@@ -45,75 +51,44 @@
 						<a name="main"></a>
 						<div class="post-header">10builders10tools</div>
 						<div class="post-content">
-							10b10t is a Minecraft anarchy server with a never-ending world and no rules. But it's not another clone. Past dupes have destroyed the vanilla economy, so we have a new meta: The Skull Economy.<br />
-							The IP is <strong>10b10t.com</strong>. It has been on the same world since May 2025. The world is 1.8TB with 6000+ unique players joined. (Updated December 29th, 2025)
-						</div>
-
-						<div class="post-header">News - 8-15-2025</div>
-						<div class="post-content">
-							10b10t is now a cracked server, added fallback server & auth server, made slight optimizations, contact support@10b10t.com with any questions or issues found!
-						</div>
-
-						<div class="post-header">News - 10-03-2025</div>
-						<div class="post-content">
-							10b10t put on new hardware (Threadripper 2950X / 128GB RAM).
-						</div>
-
-						<div class="post-header">News - 12-29-2025</div>
-						<div class="post-content">
-							Website updated: Added official Terms tab with Mojang/Xbox compliance guidelines, updated hardware transparency specs (30TB Array), and refreshed world size stats (now 1.8TB).
+							10b10t is a Minecraft anarchy server with a never-ending world. <br />
+							The IP is <strong>10b10t.com</strong>. World size: 1.8TB. (Updated December 29th, 2025)
 						</div>
 						
+						<div class="post-header">News - 12-29-2025</div>
+						<div class="post-content">
+							Website updated to work on Vercel. Added live player count and auto-gallery.
+						</div>
+
 						<div class="spacer7"></div>
-						Website last Updated December 29th, 2025.
-						<br />
 						<iframe style="width:728px;height:90px;max-width:100%;border:none;display:block;margin:auto" src="https://namemc.com/server/10b10t.com/embed" width="728" height="90"></iframe>
 					</div>
 
 					<div id="area2" class="item">
 						<a name="area2"></a>
-						<div class="post-header">Donation Rewards</div>
-						<div class="post-content">
-							Note: This section contains optional rewards.<br />
-							for 5 USD you get access to colored chat<br />
-							<br />
-							Rewards are cosmetic only. No gameplay advantage is given.
-						</div>
-
 						<div class="post-header">Server Hardware</div>
 						<div class="post-content">
-							10b10t runs on a dedicated high-performance machine to ensure maximum uptime and stability for our growing world.<br />
-							<br />
-							<strong>CPU:</strong> AMD Ryzen Threadripper 2950X (16-Core)<br />
+							<strong>CPU:</strong> AMD Ryzen Threadripper 2950X<br />
 							<strong>RAM:</strong> 128GB DDR4<br />
 							<strong>Storage:</strong> 30TB HDD Array<br />
-							<strong>Current World Size:</strong> 1.8TB
-						</div>
-
-						<div class="post-header">Server Hosting Info</div>
-						<div class="post-content">
-							The server is hosted on dedicated hardware paid monthly by a transparent donation system. If donations fall short, the server may shut down and the world may be released as a torrent.
+							<strong>World Size:</strong> 1.8TB
 						</div>
 					</div>
 
 					<div id="area3" class="item">
 						<a name="area3"></a>
-						<div class="post-header">About</div>
-						<div class="post-content">
-							The server is operated by ToastedAvacado. It’s purely for fun no financial gain is had.
-						</div>
-						<div class="spacer3"></div>
-
 						<div class="post-header">Contact</div>
 						<div class="post-content">
-							Use <a href="https://discord.gg/RYD6DbWEPs" target="_blank">Discord[CLICK ME!!!]</a> to reach Toast or email support@10b10t.com.<br />
+							Reach Toast on <a href="https://discord.gg/RYD6DbWEPs" target="_blank">Discord</a> or email support@10b10t.com.
 						</div>
-						
-						<div class="spacer3"></div>
-					
-						<div class="post-header">Youtube</div>
+					</div>
+
+					<div id="area5" class="item">
+						<a name="area5"></a>
+						<div class="post-header">Server Gallery</div>
 						<div class="post-content">
-							Use <a href="https://www.youtube.com/@10builders10tools" target="_blank">YOUTUBE[CLICK ME!!!]</a> to see 10b10t.com official content<br />
+							<center id="image-container">
+								</center>
 						</div>
 					</div>
 
@@ -121,50 +96,46 @@
 						<a name="area4"></a>
 						<div class="post-header">Terms of Service</div>
 						<div class="post-content">
-							This server hosts the Survival game mode as provided by Mojang Studios. Survival is an open-ended sandbox experience where player interaction is largely unrestricted. Gameplay elements such as PvP, destruction, and player conflict are part of the intended design of the game and may occur freely. As a result, the game environment may be chaotic, harsh, or unpleasant, which is generally the point.<br />
-							<br />
-							That said, despite the game being about punching trees and each other, certain expectations exist outside of core gameplay.
-						</div>
-
-						<div class="post-header">Compliance & Stability</div>
-						<div class="post-content">
-							All players are expected to follow the <a href="https://www.minecraft.net/usage-guidelines" target="_blank">Minecraft Usage Guidelines</a>, <a href="https://www.minecraft.net/community-standards" target="_blank">Minecraft Community Standards</a>, and <a href="https://www.xbox.com/en-US/legal/community-standards" target="_blank">Xbox Community Standards</a> that were agreed to when creating a Minecraft account, as required by Mojang Studios, who are very serious about these things.<br />
-							<br />
-							Players may be expected to avoid actions that intentionally and significantly interfere with the operation or stability of the server. This may include, but is not limited to, abusing bugs, exploits, or unintended mechanics in a way that causes server disruption, lag, or other technical issues that affect the broader player base.
-						</div>
-
-						<div class="post-header">Chat and Community Notes</div>
-						<div class="post-content">
-							In-game chat exists primarily to support gameplay. Excessive messaging, repeated spam, unsolicited advertising, or automated messages may be limited or restricted at any time, especially if they attract unwanted attention.<br />
-							<br />
-							Behavior that may be interpreted as personal harassment, real-life threats, or targeted abuse beyond the scope of normal gameplay may be discouraged. Players are reminded that this is, in fact, a video game.<br />
-							<br />
-							Content that may be reasonably interpreted as promoting harmful or hateful ideologies may be subject to review, because apparently even an anarchy server still has to say that.
-						</div>
-
-						<div class="post-header">Administrative Discretion</div>
-						<div class="post-content">
-							Administrative action may be taken at any time, including but not limited to limiting chat access or server access, either temporarily or permanently. Such actions may depend on severity, impact, interpretation, alignment of the stars, or compliance obligations.<br />
-							<br />
-							<strong>please send any reports to <a href="mailto:support@10b10t.com">support@10b10t.com</a></strong>
+							Please follow <a href="https://www.minecraft.net/community-standards" target="_blank">Minecraft Community Standards</a>.<br />
+							Reports: <strong>support@10b10t.com</strong>
 						</div>
 					</div>
-
-					<div class="clear"></div>
 				</div>
 			</div>
 		</div>
 
 		<div class="container con3">
-			<script type="text/javascript">
-				function recp2() {
-					$('#two').load("serverstatus/serverQuery.php");
-				}
-			</script>
-			<div id='two'></div>
+			<div id="status-box">
+				Status: <span id="server-status">Loading...</span><br />
+				Players: <span id="player-count">-</span>
+			</div>
 		</div>
-
-		<div class="clear"></div>
 	</div>
+
+	<script type="text/javascript">
+		// 1. GALLERY: Add your filenames here "image.jpg"
+		var myImages = ["spawn_render.jpg", "grief1.jpg", "base1.jpg"]; 
+		var container = document.getElementById('image-container');
+		myImages.forEach(function(img) {
+			container.innerHTML += '<a href="images/' + img + '" target="_blank"><img src="images/' + img + '" class="gallery-img" /></a>';
+		});
+
+		// 2. SERVER STATUS: Fetches live data from your IP
+		function updateStatus() {
+			fetch('https://api.mcsrvstat.us/2/10b10t.com')
+				.then(response => response.json())
+				.then(data => {
+					var statusSpan = document.getElementById('server-status');
+					var playerSpan = document.getElementById('player-count');
+					if (data.online) {
+						statusSpan.innerHTML = '<span class="online">ONLINE</span>';
+						playerSpan.innerHTML = data.players.online + ' / ' + data.players.max;
+					} else {
+						statusSpan.innerHTML = '<span class="offline">OFFLINE</span>';
+						playerSpan.innerHTML = '0';
+					}
+				});
+		}
+	</script>
 </body>
 </html>
