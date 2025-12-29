@@ -10,9 +10,9 @@
 	<style type="text/css">
 		.gallery-img { width: 220px; height: 130px; margin: 5px; border: 2px solid #444; cursor: pointer; transition: transform 0.2s; }
 		.gallery-img:hover { transform: scale(1.1); border-color: #888; }
-		#status-box { padding: 10px; background: rgba(0,0,0,0.5); border: 1px solid #444; color: #fff; font-family: monospace; }
-		.online { color: #00ff00; }
-		.offline { color: #ff0000; }
+		#status-box { padding: 10px; background: rgba(0,0,0,0.5); border: 1px solid #444; color: #fff; font-family: monospace; font-size: 12px; }
+		.online { color: #00ff00; font-weight: bold; }
+		.offline { color: #ff0000; font-weight: bold; }
 	</style>
 	<script src="script/jQuery_v1_4_2.js" type="text/javascript" charset="utf-8"></script>
 	<script src="script/jquery.scrollTo.js" type="text/javascript" charset="utf-8"></script>
@@ -35,7 +35,9 @@
 		</div>
 
 		<div class="container con1">
-			10b10t runs on monthly donations. The server needs $91 per month to operate.<br />
+			10b10t runs on monthly donations. The server needs $91 per month to operate. If unpaid for a week after a due date, it will shut down.
+			<p>If the server ever ends, the world will be released as a torrent.</p>
+			Donations are transparent. No one profits from them.<br />
 			<br />
 			December Goal: $0 out of $91<br />
 			<form action="https://10b10t.tebex.io/" method="post">
@@ -51,27 +53,51 @@
 						<a name="main"></a>
 						<div class="post-header">10builders10tools</div>
 						<div class="post-content">
-							10b10t is a Minecraft anarchy server with a never-ending world. <br />
-							The IP is <strong>10b10t.com</strong>. World size: 1.8TB. (Updated December 29th, 2025)
-						</div>
-						
-						<div class="post-header">News - 12-29-2025</div>
-						<div class="post-content">
-							Website updated to work on Vercel. Added live player count and auto-gallery.
+							10b10t is a Minecraft anarchy server with a never-ending world and no rules. But it's not another clone. Past dupes have destroyed the vanilla economy, so we have a new meta: The Skull Economy.<br />
+							The IP is <strong>10b10t.com</strong>. It has been on the same world since May 2025. The world is 1.8TB with 6000+ unique players joined. (Updated December 29th, 2025)
 						</div>
 
+						<div class="post-header">News - 6-3-2025</div>
+						<div class="post-content">Website Created.</div>
+
+						<div class="post-header">News - 6-11-2025</div>
+						<div class="post-content">
+							The monthly dupe has been activated. Check <a href="https://discord.gg/RYD6DbWEPs" target="_blank">Discord[CLICK ME!!!!]</a> for instructions on how to use it.
+						</div>
+
+						<div class="post-header">News - 8-15-2025</div>
+						<div class="post-content">
+							10b10t is now a cracked server, added fallback server & auth server, made slight optimizations.
+						</div>
+
+						<div class="post-header">News - 10-03-2025</div>
+						<div class="post-content">
+							10b10t put on new hardware (Threadripper 2950X / 128GB RAM).
+						</div>
+
+						<div class="post-header">News - 12-29-2025</div>
+						<div class="post-content">
+							Website updated: Added Gallery tab, Terms of Service compliance, and live server status for Vercel. World size officially 1.8TB.
+						</div>
+						
 						<div class="spacer7"></div>
+						Website last Updated December 29th, 2025.
+						<br />
 						<iframe style="width:728px;height:90px;max-width:100%;border:none;display:block;margin:auto" src="https://namemc.com/server/10b10t.com/embed" width="728" height="90"></iframe>
 					</div>
 
 					<div id="area2" class="item">
 						<a name="area2"></a>
+						<div class="post-header">Donation Rewards</div>
+						<div class="post-content">
+							Note: This section contains optional rewards. for 5 USD you get access to colored chat. Rewards are cosmetic only.
+						</div>
 						<div class="post-header">Server Hardware</div>
 						<div class="post-content">
-							<strong>CPU:</strong> AMD Ryzen Threadripper 2950X<br />
+							<strong>CPU:</strong> AMD Ryzen Threadripper 2950X (16-Core)<br />
 							<strong>RAM:</strong> 128GB DDR4<br />
 							<strong>Storage:</strong> 30TB HDD Array<br />
-							<strong>World Size:</strong> 1.8TB
+							<strong>Current World Size:</strong> 1.8TB
 						</div>
 					</div>
 
@@ -79,7 +105,9 @@
 						<a name="area3"></a>
 						<div class="post-header">Contact</div>
 						<div class="post-content">
-							Reach Toast on <a href="https://discord.gg/RYD6DbWEPs" target="_blank">Discord</a> or email support@10b10t.com.
+							Reach Toast on <a href="https://discord.gg/RYD6DbWEPs" target="_blank">Discord[CLICK ME!!!]</a> or email support@10b10t.com.<br />
+							<br />
+							<a href="https://www.youtube.com/@10builders10tools" target="_blank">YOUTUBE[CLICK ME!!!]</a>
 						</div>
 					</div>
 
@@ -96,33 +124,37 @@
 						<a name="area4"></a>
 						<div class="post-header">Terms of Service</div>
 						<div class="post-content">
-							Please follow <a href="https://www.minecraft.net/community-standards" target="_blank">Minecraft Community Standards</a>.<br />
-							Reports: <strong>support@10b10t.com</strong>
+							Compliance with <a href="https://www.minecraft.net/community-standards" target="_blank">Minecraft Community Standards</a> is required. Reports should be sent to <strong>support@10b10t.com</strong>.
 						</div>
 					</div>
+
+					<div class="clear"></div>
 				</div>
 			</div>
 		</div>
 
 		<div class="container con3">
 			<div id="status-box">
-				Status: <span id="server-status">Loading...</span><br />
-				Players: <span id="player-count">-</span>
+				10b10t.com Status: <span id="server-status">Connecting...</span><br />
+				Players Online: <span id="player-count">-</span>
 			</div>
 		</div>
+		<div class="clear"></div>
 	</div>
 
 	<script type="text/javascript">
-		// 1. GALLERY: Add your filenames here "image.jpg"
-		var myImages = ["spawn_render.png", "grief1.jpg", "base1.jpg"]; 
+		// GALLERY LOADER: Update this list with your filenames
+		var myImages = ["spawn_render.png"]; 
 		var container = document.getElementById('image-container');
-		myImages.forEach(function(img) {
-			container.innerHTML += '<a href="images/' + img + '" target="_blank"><img src="images/' + img + '" class="gallery-img" /></a>';
-		});
+		if(container) {
+			myImages.forEach(function(img) {
+				container.innerHTML += '<a href="images/' + img + '" target="_blank"><img src="images/' + img + '" class="gallery-img" /></a>';
+			});
+		}
 
-		// 2. SERVER STATUS: Fetches live data from your IP
+		// LIVE STATUS: Vercel-compatible fetch
 		function updateStatus() {
-			fetch('https://api.mcsrvstat.us/2/10b10t.com')
+			fetch('https://api.mcsrvstat.us/3/10b10t.com')
 				.then(response => response.json())
 				.then(data => {
 					var statusSpan = document.getElementById('server-status');
@@ -132,10 +164,15 @@
 						playerSpan.innerHTML = data.players.online + ' / ' + data.players.max;
 					} else {
 						statusSpan.innerHTML = '<span class="offline">OFFLINE</span>';
-						playerSpan.innerHTML = '0';
+						playerSpan.innerHTML = '0 / 0';
 					}
+				})
+				.catch(err => {
+					document.getElementById('server-status').innerHTML = 'QUERY ERROR';
 				});
 		}
+		// Refresh status every 60 seconds
+		setInterval(updateStatus, 60000);
 	</script>
 </body>
 </html>
