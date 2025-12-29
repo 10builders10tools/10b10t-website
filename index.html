@@ -10,9 +10,26 @@
 	<style type="text/css">
 		.gallery-img { width: 220px; height: 130px; margin: 5px; border: 2px solid #444; cursor: pointer; transition: transform 0.2s; }
 		.gallery-img:hover { transform: scale(1.1); border-color: #888; }
-		#status-box { padding: 10px; background: rgba(0,0,0,0.5); border: 1px solid #444; color: #fff; font-family: monospace; font-size: 13px; }
+		
+		#status-box { padding: 15px; background: rgba(0,0,0,0.7); border: 1px solid #444; color: #fff; font-family: monospace; font-size: 13px; margin-top: 10px; }
 		.online { color: #00ff00; font-weight: bold; }
 		.offline { color: #ff0000; font-weight: bold; }
+		#player-list { 
+			margin-top: 10px; 
+			display: flex; 
+			flex-wrap: wrap; 
+			gap: 10px; 
+			max-height: 150px; 
+			overflow-y: auto; 
+			padding: 10px; 
+			border-top: 1px solid #333;
+			background: rgba(0,0,0,0.3);
+		}
+		.player-head-wrapper { text-align: center; width: 60px; font-size: 9px; line-height: 1.2; }
+		.player-head { width: 32px; height: 32px; image-rendering: pixelated; border: 1px solid #555; margin-bottom: 2px; }
+		#player-list::-webkit-scrollbar { width: 6px; }
+		#player-list::-webkit-scrollbar-track { background: #111; }
+		#player-list::-webkit-scrollbar-thumb { background: #444; border-radius: 3px; }
 	</style>
 	<script src="script/jQuery_v1_4_2.js" type="text/javascript" charset="utf-8"></script>
 	<script src="script/jquery.scrollTo.js" type="text/javascript" charset="utf-8"></script>
@@ -74,7 +91,7 @@
 						<div class="post-content">10b10t put on new hardware (Threadripper 2950X / 128GB RAM).</div>
 
 						<div class="post-header">News - 12-29-2025</div>
-						<div class="post-content">Website updated: Added Gallery tab, full Terms of Service, and Vercel-compatible live server status. World size updated to 1.8TB.</div>
+						<div class="post-content">Website updated: Added Gallery tab, full Terms of Service, and Vercel-compatible live server status with online player skin heads. World size updated to 1.8TB.</div>
 						
 						<div class="spacer7"></div>
 						Website last Updated December 29th, 2025.
@@ -120,7 +137,7 @@
 						</div>
 						<div class="post-header">Youtube</div>
 						<div class="post-content">
-							Use <a href="https://www.youtube.com/@10builders10tools" target="_blank">YOUTUBE[CLICK ME!!!]</a> to see official content.
+							Use <a href="https://www.youtube.com/@10builders10tools" target="_blank">YOUTUBE[CLICK ME!!!]</a> to see 10b10t.com official content.
 						</div>
 					</div>
 
@@ -129,8 +146,7 @@
 						<div class="post-header">Server Gallery</div>
 						<div class="post-content">
 							Snapshots of 10b10t history. (Click to view full size)<br /><br />
-							<center id="image-container">
-								</center>
+							<center id="image-container"></center>
 						</div>
 					</div>
 
@@ -144,21 +160,21 @@
 
 						<div class="post-header">Compliance & Stability</div>
 						<div class="post-content">
-							All players are expected to follow the <a href="https://www.minecraft.net/usage-guidelines" target="_blank">Minecraft Usage Guidelines</a>, <a href="https://www.minecraft.net/community-standards" target="_blank">Minecraft Community Standards</a>, and <a href="https://www.xbox.com/en-US/legal/community-standards" target="_blank">Xbox Community Standards</a> that were agreed to when creating a Minecraft account.<br /><br />
-							Players may be expected to avoid actions that intentionally and significantly interfere with the operation or stability of the server. This may include, but is not limited to, abusing bugs, exploits, or unintended mechanics in a way that causes server disruption, lag, or other technical issues.
+							All players are expected to follow the <a href="https://www.minecraft.net/usage-guidelines" target="_blank">Minecraft Usage Guidelines</a>, <a href="https://www.minecraft.net/community-standards" target="_blank">Minecraft Community Standards</a>, and <a href="https://www.xbox.com/en-US/legal/community-standards" target="_blank">Xbox Community Standards</a> that were agreed to when creating a Minecraft account, as required by Mojang Studios, who are very serious about these things.<br /><br />
+							Players may be expected to avoid actions that intentionally and significantly interfere with the operation or stability of the server. This may include, but is not limited to, abusing bugs, exploits, or unintended mechanics in a way that causes server disruption, lag, or other technical issues that affect the broader player base.
 						</div>
 
 						<div class="post-header">Chat and Community Notes</div>
 						<div class="post-content">
-							In-game chat exists primarily to support gameplay. Excessive messaging, repeated spam, unsolicited advertising, or automated messages may be limited or restricted at any time.<br /><br />
+							In-game chat exists primarily to support gameplay. Excessive messaging, repeated spam, unsolicited advertising, or automated messages may be limited or restricted at any time, especially if they attract unwanted attention.<br /><br />
 							Behavior that may be interpreted as personal harassment, real-life threats, or targeted abuse beyond the scope of normal gameplay may be discouraged. Players are reminded that this is, in fact, a video game.<br /><br />
-							Content that may be reasonably interpreted as promoting harmful or hateful ideologies may be subject to review.
+							Content that may be reasonably interpreted as promoting harmful or hateful ideologies may be subject to review, because apparently even an anarchy server still has to say that.
 						</div>
 
 						<div class="post-header">Administrative Discretion</div>
 						<div class="post-content">
-							Administrative action may be taken at any time, including but not limited to limiting chat access or server access, either temporarily or permanently.<br /><br />
-							<strong>Please send any reports to <a href="mailto:support@10b10t.com">support@10b10t.com</a></strong>
+							Administrative action may be taken at any time, including but not limited to limiting chat access or server access, either temporarily or permanently. Such actions may depend on severity, impact, interpretation, alignment of the stars, or compliance obligations.<br /><br />
+							<strong>please send any reports to <a href="mailto:support@10b10t.com">support@10b10t.com</a></strong>
 						</div>
 					</div>
 
@@ -171,15 +187,14 @@
 			<div id="status-box">
 				10b10t.com Status: <span id="server-status">Connecting...</span><br />
 				Players Online: <span id="player-count">-</span>
+				<div id="player-list"></div>
 			</div>
 		</div>
-
 		<div class="clear"></div>
 	</div>
 
 	<script type="text/javascript">
-		// GALLERY LOADER: Just add your filenames to this list
-		var myImages = ["spawn_render.png"]; 
+		var myImages = ["spawn_render.jpg", "grief1.jpg", "base1.jpg"]; 
 		var container = document.getElementById('image-container');
 		if(container) {
 			myImages.forEach(function(img) {
@@ -187,27 +202,34 @@
 			});
 		}
 
-		// LIVE STATUS: Vercel-compatible fetch
 		function updateStatus() {
 			fetch('https://api.mcsrvstat.us/3/10b10t.com')
 				.then(response => response.json())
 				.then(data => {
 					var statusSpan = document.getElementById('server-status');
 					var playerSpan = document.getElementById('player-count');
+					var listDiv = document.getElementById('player-list');
 					if (data.online) {
 						statusSpan.innerHTML = '<span class="online">ONLINE</span>';
 						playerSpan.innerHTML = data.players.online + ' / ' + data.players.max;
+						if (data.players.list) {
+							listDiv.innerHTML = '';
+							data.players.list.forEach(player => {
+								listDiv.innerHTML += `
+									<div class="player-head-wrapper">
+										<img src="https://crafatar.com/avatars/${player.uuid}?size=32&overlay" class="player-head" title="${player.name}"><br/>
+										${player.name}
+									</div>`;
+							});
+						} else { listDiv.innerHTML = 'Player names hidden by server.'; }
 					} else {
 						statusSpan.innerHTML = '<span class="offline">OFFLINE</span>';
 						playerSpan.innerHTML = '0 / 0';
+						listDiv.innerHTML = '';
 					}
 				})
-				.catch(err => {
-					document.getElementById('server-status').innerHTML = '<span class="offline">QUERY ERROR</span>';
-				});
+				.catch(err => { document.getElementById('server-status').innerHTML = 'QUERY ERROR'; });
 		}
-		
-		// Initial update and refresh every minute
 		updateStatus();
 		setInterval(updateStatus, 60000);
 	</script>
