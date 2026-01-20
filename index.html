@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10b10t - Minecraft Anarchy Server</title>
+    <meta name="description" content="10b10t - A Minecraft anarchy server with a never-ending world since May 2025">
+    <meta name="keywords" content="minecraft, anarchy, 2b2t, 10b10t, server">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">10b10t</h1>
+            <p class="hero-subtitle">Minecraft Anarchy Server</p>
+            <div class="server-ip">
+                <span class="ip-label">Server IP:</span>
+                <span class="ip-address">10b10t.com</span>
+                <button class="copy-btn" onclick="copyIP()">Copy</button>
+            </div>
+        </div>
+        <div class="scroll-indicator">↓</div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#news" class="nav-link">News</a>
+            <a href="#gallery" class="nav-link">Gallery</a>
+            <a href="#donate" class="nav-link">Donate</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Server Status Card -->
+        <section id="home" class="section">
+            <div class="status-card">
+                <h2>Server Status</h2>
+                <div class="status-grid">
+                    <div class="status-item">
+                        <span class="status-label">Status</span>
+                        <span id="server-status" class="status-value">Checking...</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Players Online</span>
+                        <span id="player-count" class="status-value">-</span>
+                    </div>
+                    <div class="status-item full-width">
+                        <span class="status-label">Online Players</span>
+                        <div id="player-list" class="player-grid"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="card">
+                <h2>About 10b10t</h2>
+                <p>10b10t is a Minecraft anarchy server with a never-ending world. The server has been running on the same world since <strong>May 2025</strong>.</p>
+                <div class="stats-grid">
+                    <div class="stat">
+                        <div class="stat-value">1.8TB</div>
+                        <div class="stat-label">World Size</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">6000+</div>
+                        <div class="stat-label">Unique Players</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">24/7</div>
+                        <div class="stat-label">Uptime</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Server Hardware</h2>
+                <div class="hardware-list">
+                    <div class="hardware-item">
+                        <span class="hw-label">CPU</span>
+                        <span class="hw-value">AMD Ryzen Threadripper 2950X (16-Core)</span>
+                    </div>
+                    <div class="hardware-item">
+                        <span class="hw-label">RAM</span>
+                        <span class="hw-value">128GB DDR4</span>
+                    </div>
+                    <div class="hardware-item">
+                        <span class="hw-label">Storage</span>
+                        <span class="hw-value">30TB HDD Array</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section id="news" class="section">
+            <h2 class="section-title">Latest News</h2>
+            <div class="news-grid">
+                <article class="news-card">
+                    <div class="news-date">December 29, 2025</div>
+                    <h3>Website Updated</h3>
+                    <p>Added Gallery tab, full Terms of Service section, live server status, and real-time online player list with skin heads. World size updated to 1.8TB.</p>
+                </article>
+                <article class="news-card">
+                    <div class="news-date">October 3, 2025</div>
+                    <h3>Hardware Upgrade</h3>
+                    <p>10b10t put on new hardware (Threadripper 2950X / 128GB RAM).</p>
+                </article>
+                <article class="news-card">
+                    <div class="news-date">August 15, 2025</div>
+                    <h3>Server Updates</h3>
+                    <p>10b10t is now a cracked server, added fallback server & auth server, made slight optimizations.</p>
+                </article>
+                <article class="news-card">
+                    <div class="news-date">June 11, 2025</div>
+                    <h3>Monthly Dupe Activated</h3>
+                    <p>The monthly dupe has been activated. Check Discord for instructions on how to use it.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="section">
+            <h2 class="section-title">Server Gallery</h2>
+            <div class="gallery-grid" id="gallery-container"></div>
+        </section>
+
+        <!-- Donation Section -->
+        <section id="donate" class="section">
+            <div class="card donation-card">
+                <h2>Support the Server</h2>
+                <p>10b10t runs on monthly donations. The server needs <strong>$91 per month</strong> to operate.</p>
+                <div class="donation-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                    <p class="progress-text">January Goal: $0 out of $91</p>
+                </div>
+                <p class="donation-info">
+                    If unpaid for a week after a due date, the server will shut down.<br>
+                    If the server ever ends, the world will be released as a torrent.<br>
+                    Donations are transparent. No one profits from them.
+                </p>
+                <form action="https://10b10t.tebex.io/" method="post" class="donate-form">
+                    <button type="submit" class="donate-btn">Donate Now</button>
+                </form>
+                <div class="perks">
+                    <h3>Donation Rewards (Cosmetic Only)</h3>
+                    <p>For $5 USD you get access to colored chat</p>
+                    <small>Rewards are cosmetic only. No gameplay advantage is given.</small>
+                </div>
+            </div>
+        </section>
+
+        <!-- Links Section -->
+        <section class="section">
+            <div class="links-grid">
+                <a href="https://discord.gg/RYD6DbWEPs" target="_blank" rel="noopener noreferrer" class="link-card discord">
+                    <div class="link-icon">💬</div>
+                    <h3>Discord</h3>
+                    <p>Join our community</p>
+                </a>
+                <a href="https://www.youtube.com/@10builders10tools" target="_blank" rel="noopener noreferrer" class="link-card youtube">
+                    <div class="link-icon">▶️</div>
+                    <h3>YouTube</h3>
+                    <p>Official content</p>
+                </a>
+                <a href="mailto:support@10b10t.com" class="link-card email">
+                    <div class="link-icon">✉️</div>
+                    <h3>Email</h3>
+                    <p>support@10b10t.com</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>10b10t - Operated by ToastedAvacado</p>
+            <p>Purely for fun. No financial gain.</p>
+            <p><small>Last updated December 29th, 2025</small></p>
+        </div>
+    </footer>
+
+    <script src="Script.js"></script>
+</body>
+</html>
