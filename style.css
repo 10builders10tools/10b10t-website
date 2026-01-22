@@ -65,20 +65,25 @@ body {
 .hero-title {
 	font-size: clamp(4rem, 15vw, 8rem);
 	font-weight: 900;
-	background: linear-gradient(135deg, #60a5fa 0%, var(--secondary) 100%);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	background-clip: text;
 	margin-bottom: 1rem;
-	letter-spacing: -0.02em;
+	letter-spacing: 0.05em;
 	animation: fadeInUp 1s ease;
 	line-height: 0.9;
 	text-align: left;
 	align-self: center;
+	font-family: 'Minecraft', monospace;
+	text-shadow:
+	2px 2px 0px rgba(0, 0, 0, 0.4),
+	4px 4px 0px rgba(0, 0, 0, 0.3),
+	6px 6px 0px rgba(0, 0, 0, 0.2),
+	8px 8px 0px rgba(0, 0, 0, 0.1);
+	image-rendering: pixelated;
+	-webkit-font-smoothing: none;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 .hero-title-indent {
-	padding-left: 0.5em;
+	padding-left: 0.7em;
 }
 
 .hero-subtitle {
