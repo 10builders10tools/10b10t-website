@@ -72,18 +72,18 @@ body {
 	text-align: left;
 	align-self: center;
 	font-family: 'Minecraft', monospace;
-	text-shadow:
-	2px 2px 0px rgba(0, 0, 0, 0.4),
-	4px 4px 0px rgba(0, 0, 0, 0.3),
-	6px 6px 0px rgba(0, 0, 0, 0.2),
-	8px 8px 0px rgba(0, 0, 0, 0.1);
+	text-shadow: 
+		2px 2px 0px rgba(0, 0, 0, 0.4),
+		4px 4px 0px rgba(0, 0, 0, 0.3),
+		6px 6px 0px rgba(0, 0, 0, 0.2),
+		8px 8px 0px rgba(0, 0, 0, 0.1);
 	image-rendering: pixelated;
 	-webkit-font-smoothing: none;
 	-moz-osx-font-smoothing: grayscale;
 }
 
 .hero-title-indent {
-	padding-left: 0.7em;
+	padding-left: 0.1em;
 }
 
 .hero-subtitle {
@@ -560,9 +560,17 @@ body {
 	background: rgba(88, 101, 242, 0.1);
 }
 
+.link-card.discord:hover .link-icon {
+	color: #5865f2;
+}
+
 .link-card.youtube:hover {
 	border-color: #ff0000;
 	background: rgba(255, 0, 0, 0.1);
+}
+
+.link-card.youtube:hover .link-icon {
+	color: #ff0000;
 }
 
 .link-card.email:hover {
@@ -573,6 +581,16 @@ body {
 .link-icon {
 	font-size: 3rem;
 	margin-bottom: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: color 0.3s;
+}
+
+.link-icon svg {
+	width: 48px;
+	height: 48px;
+	transition: fill 0.3s;
 }
 
 .link-card h3 {
