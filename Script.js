@@ -239,7 +239,7 @@ async function updateLiveChat() {
         if (data.online && data.messages && data.messages.length > 0) {
             chatContainer.innerHTML = '';
             
-            data.messages.slice(0, 20).forEach(msg => {
+            data.messages.slice(0, 20).reverse().forEach(msg => {
                 const msgEl = document.createElement('div');
                 msgEl.className = 'chat-message';
                 
@@ -260,6 +260,8 @@ async function updateLiveChat() {
                 
                 chatContainer.appendChild(msgEl);
             });
+            
+            chatContainer.scrollTop = chatContainer.scrollHeight;
         } else {
             chatContainer.innerHTML = '<div style="color: #888888; padding: 1rem; font-family: Courier New, monospace;">[INFO] No recent chat messages</div>';
         }
