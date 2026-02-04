@@ -151,6 +151,18 @@ async function updateServerStatus() {
                         valueEl.textContent = `${data.world_size_gb.toFixed(1)}GB`;
                     }
                 }
+                if (label && label.textContent === 'Unique Players') {
+                    const valueEl = stat.querySelector('.stat-value');
+                    if (valueEl && data.players_total) {
+                        valueEl.textContent = `${data.players_total.toLocaleString()}+`;
+                    }
+                }
+                if (label && label.textContent === 'Uptime') {
+                    const valueEl = stat.querySelector('.stat-value');
+                    if (valueEl && data.total_uptime_days) {
+                        valueEl.textContent = `${data.total_uptime_days} days`;
+                    }
+                }
             });
             
         } else {
