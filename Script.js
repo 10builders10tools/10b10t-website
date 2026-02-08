@@ -290,12 +290,19 @@ function initSmoothScroll() {
     
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
+            const href = link.getAttribute('href');
+            
+            // Skip external links
+            if (!href || !href.startsWith('#')) {
+                return;
+            }
+            
             e.preventDefault();
             
             navLinks.forEach(l => l.classList.remove('active'));
             link.classList.add('active');
             
-            const targetId = link.getAttribute('href').substring(1);
+            const targetId = href.substring(1);
             const targetSection = document.getElementById(targetId);
             
             if (targetSection) {
@@ -330,8 +337,15 @@ function initScrollSpy() {
         });
         
         navLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            
+            // Skip external links
+            if (!href || !href.startsWith('#')) {
+                return;
+            }
+            
             link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
+            if (href === `#${current}`) {
                 link.classList.add('active');
             }
         });
