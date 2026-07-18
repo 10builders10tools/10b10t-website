@@ -38,14 +38,14 @@
 
             <div class="card terms-card">
                 <h2>IP Addresses</h2>
-                <p>10b10t never stores player IP addresses. No IP logs are kept.</p>
-                <p>Your IP does, however, pass through services that need it to function while you are connected:</p>
+                <p>10b10t keeps no persistent IP logs. Your IP is not written to disk during normal play, and nothing is retained after you disconnect.</p>
+                <p>While you are connected, your IP necessarily passes through the services that need it to function:</p>
                 <ul>
                     <li>The authentication server, which handles offline-mode logins.</li>
                     <li>Anti-bot protection, which filters join floods and bot attacks.</li>
                     <li>The DDoS protection nodes that proxy your connection to the server.</li>
                 </ul>
-                <p>These services use your IP live to do their job. Once you disconnect, the server keeps no record of it.</p>
+                <p>These services use your IP live to do their job and drop it once your session ends. There is one exception, described below.</p>
             </div>
 
             <div class="card terms-card">
@@ -76,7 +76,7 @@
 
             <div class="card terms-card">
                 <h2>The One Exception</h2>
-                <p>As stated in the <a href="terms.html">Terms of Service</a>, CSAM is the one case where the no-storage habit is set aside: whatever evidence is available at the time, including connection data from an active session, will be captured, preserved, and included in the report to the authorities.</p>
+                <p>As stated in the <a href="terms.html">Terms of Service</a>, CSAM is the one case where this is set aside. If it is found, whatever connection data is visible during that active session is captured and preserved on the spot, along with any other available evidence, and included in the report to the authorities. This is a live capture from an ongoing session, not a stored log being pulled up. Outside this one case, there is no IP record to preserve in the first place.</p>
             </div>
 
             <div class="card terms-card">
